@@ -1,13 +1,13 @@
 header {
     padding: 20px 0;
-    background-image: url('../images/Bitmap.png'); /* Background image */
-    background-size: cover; /* Cover the entire section */
-    background-attachment: local; /* Fix the image so it doesn't scroll */
+    background-image: url('../images/Bitmap.png'); 
+    background-size: cover; 
+    background-attachment: local; 
     background-position: center;
 }
 
 .logo img {
-    margin-right: 252px;
+    margin-right: 500px;
 }
 
 .header__nav ul {
@@ -24,7 +24,6 @@ header {
 .header__nav-link a {
     font-size: 12px;
     font-weight: 500;
-    color: #fff;
 }
 
 .btn {
@@ -32,6 +31,7 @@ header {
     color: #606B74;
     padding: 10px 20px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {

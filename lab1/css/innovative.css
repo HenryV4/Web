@@ -1,31 +1,33 @@
 .innovative {
-    height: 300px;
     padding: 40px 60px;
     background-color: #26353B;
     color: #fff;
+    position: relative; 
 }
 
-.innovative h1 {
-    font-size: 30px; 
-    font-family: Merriweather; 
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    font-family: Merriweather, serif;
     font-weight: 900;
-}
-
-.boxes {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    margin: 0;
+    padding: 20px;
+    margin-left: 160px;
 }
 
 .box {
-    padding: 10px;
-    flex: 1;
+    padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative; 
 }
 
 .box p {
     opacity: 0.70;
-    font-family: Rubik; 
-    font-weight: 400; 
+    font-family: Rubik, sans-serif;
     line-height: 24px;
 }

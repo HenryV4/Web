@@ -5,43 +5,30 @@
 }
 
 .intro .text {
-    flex: 1;
     width: 400px;
 }
 
 .intro .text h1 {
-    font-size: 30px; 
-    font-family: Merriweather; 
-    font-weight: 900;
+    font-family: Merriweather;
     margin-bottom: 10px;
 }
 
-.intro .text p{
+.intro .text p {
     color: #646D70; 
-    font-size: 14px; 
-    font-family: Rubik; 
-    font-weight: 400; 
+    font-size: 14px;
     line-height: 26px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .intro .text .btn {
-    font-size: 12px;
-    width: 70px; 
-    height: 25px;
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: 1px solid #000; /* Adjusted border to 1px for clarity */
+    width: 70px;
+    border: 1px solid #000; 
     color: #606B74;
-    background-color: #fff; /* Ensure the button has a background color */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
+    background-color: #fff;
     font-size: 14px;
 }
 
-.btn:hover {
+.intro .text .btn:hover {
     background-color: #a3a3a3;
+    border: 1px solid #a3a3a3;
 }

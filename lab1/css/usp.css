@@ -2,36 +2,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 2rem 0; */
+    padding: 30px;
 }
 
 .USP .photo {
     flex: 1;
-    max-width: 50%; /* Збільшує фото */
-    margin-right: 1rem; /* Зменшує відстань між фото і текстом */
+    margin-right: 100px;
 }
 
 .USP .photo img {
     width: 100%;
-    height: auto;
 }
 
 .USP .text-blocks {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Дві колонки */
-    grid-gap: 3rem; /* Збільшує відстань між текстовими блоками */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
     flex: 1;
-    max-width: 45%; /* Налаштовує ширину блоку з текстом */
 }
 
 .text-block {
-    padding: 1rem;
+    padding: 20px;
 }
 
 .text-block h1 {
-    font-size: 1.5rem;
+    font-size: 18px;
 }
 
 .text-block p {
-    font-size: 1rem;
+    line-height: 1.5;
 }
