@@ -1,0 +1,39 @@
+header {
+    padding: 20px 0;
+    background-image: url('../images/Bitmap.png'); /* Background image */
+    background-size: cover; /* Cover the entire section */
+    background-attachment: local; /* Fix the image so it doesn't scroll */
+    background-position: center;
+}
+
+.logo img {
+    margin-right: 252px;
+}
+
+.header__nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.header__nav li {
+    color: #fff;
+    margin-left: 60px;
+}
+
+.header__nav-link a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn {
+    background-color: #fff;
+    color: #606B74;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #a3a3a3;
+}

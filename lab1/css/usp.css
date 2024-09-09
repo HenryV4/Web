@@ -1,0 +1,37 @@
+.USP {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 2rem 0; */
+}
+
+.USP .photo {
+    flex: 1;
+    max-width: 50%; /* Збільшує фото */
+    margin-right: 1rem; /* Зменшує відстань між фото і текстом */
+}
+
+.USP .photo img {
+    width: 100%;
+    height: auto;
+}
+
+.USP .text-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Дві колонки */
+    grid-gap: 3rem; /* Збільшує відстань між текстовими блоками */
+    flex: 1;
+    max-width: 45%; /* Налаштовує ширину блоку з текстом */
+}
+
+.text-block {
+    padding: 1rem;
+}
+
+.text-block h1 {
+    font-size: 1.5rem;
+}
+
+.text-block p {
+    font-size: 1rem;
+}

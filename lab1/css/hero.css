@@ -1,0 +1,100 @@
+.hero {
+    height: 600px;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 400px;
+}
+
+.text h2{
+    margin-top: 12px;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* Set to row for side-by-side layout */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-content h1 {
+    font-size: 20px; 
+    font-weight: 500;
+    margin-right: 20px;
+    opacity: 0.8;
+}
+
+.hero-content img {
+    width: 100px;
+    cursor: pointer;
+}
+
+.hero h1 {
+    opacity: 0.80;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero h2 {
+    width: 440px;
+    font-size: 30px;
+    font-family: Merriweather;
+    font-weight: 900;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.social-media {
+    margin-top: 280px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 120px; /* Increased gap to 40px */
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transform: rotate(90deg); /* Rotate text 90 degrees */
+    transform-origin: left center; /* Set the origin for rotation */
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #0073e6; /* Change color on hover */
+}
+
+.btn-play {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
