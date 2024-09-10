@@ -1,5 +1,6 @@
 .innovative {
-    padding: 40px 60px;
+    height: 200px;
+    padding: 60px 60px;
     background-color: #26353B;
     color: #fff;
     position: relative; 
@@ -15,10 +16,11 @@
     margin: 0;
     padding: 20px;
     margin-left: 160px;
+    margin-top: 40px;
 }
 
 .box {
-    padding: 20px;
+    padding: 40px 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;

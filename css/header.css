@@ -6,14 +6,14 @@ header {
     background-position: center;
 }
 
-.logo img {
-    margin-right: 500px;
-}
-
 .header__nav ul {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
+}
+
+.logo img {
+    margin-right: 500px;
 }
 
 .header__nav li {
@@ -22,7 +22,6 @@ header {
 }
 
 .header__nav-link a {
-    font-size: 12px;
     font-weight: 500;
 }
 
@@ -36,4 +35,5 @@ header {
 
 .btn:hover {
     background-color: #a3a3a3;
+    color: #fff;
 }
