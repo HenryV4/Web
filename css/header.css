@@ -1,9 +1,12 @@
-header {
-    padding: 20px 0;
+.background{
     background-image: url('../images/Bitmap.png'); 
     background-size: cover; 
     background-attachment: local; 
     background-position: center;
+}
+
+header {
+    padding: 20px;
 }
 
 .header__nav ul {
@@ -13,7 +16,7 @@ header {
 }
 
 .logo img {
-    margin-right: 500px;
+    margin-right: 450px;
 }
 
 .header__nav li {
