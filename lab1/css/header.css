@@ -1,8 +1,6 @@
 .background{
     background-image: url('../images/Bitmap.png'); 
-    background-size: cover; 
-    background-attachment: local; 
-    background-position: center;
+    background-size: cover;
 }
 
 header {
@@ -11,7 +9,6 @@ header {
 
 .header__nav ul {
     display: flex;
-    justify-content: flex-end;
     list-style-type: none;
 }
 

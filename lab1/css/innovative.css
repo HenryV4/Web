@@ -1,31 +1,22 @@
 .innovative {
     height: 200px;
-    padding: 60px 60px;
+    padding: 50px 60px;
     background-color: #26353B;
     color: #fff;
-    position: relative; 
 }
 
 .title {
-    position: absolute;
-    top: 0;
-    left: 0;
     font-size: 30px;
     font-family: Merriweather, serif;
     font-weight: 900;
     margin: 0;
-    padding: 20px;
-    margin-left: 160px;
-    margin-top: 40px;
+    margin-left: 120px;
 }
 
 .box {
-    padding: 40px 20px;
-    box-sizing: border-box;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
     gap: 40px;
-    position: relative; 
 }
 
 .box p {
