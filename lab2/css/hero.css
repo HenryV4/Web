@@ -1,0 +1,136 @@
+.hero {
+    height: 600px;
+    color: white;
+    display: flex;
+    padding: 20px 0px;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.hero h1 {
+    opacity: 0.80;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hero h2 {
+    margin-top: -10px;
+    font-size: 35px;
+    font-family: Merriweather;
+    font-weight: 600;
+    width: 60%;
+}
+
+.social-media {
+    margin-top: 265px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.social-media a {
+    font-weight: 500;
+    font-size: 14px;
+    transform: rotate(90deg); 
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffaaaa;
+}
+
+.btn-play {
+    display: flex;
+    padding: 10px 20px;
+    text-decoration: none;
+    align-items: center; /* Align icon and text vertically */
+    font-size: 17px;
+}
+
+.btn-play img {
+    width: 80%;
+}
+
+.btn-play span {
+    display: inline-block; 
+    white-space: nowrap;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+        flex-direction: column;
+    }
+    .hero .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+        width: 80%;
+    }
+
+    .hero h1 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .btn-play {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2000px) {
+
+    .hero {
+        padding: 40px 20px;
+        height: 800px;
+    }
+
+    .container {
+        max-width: 2000px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .hero h2 {
+        font-size: 50px;
+    }
+
+
+    .social-media {
+        margin-top: 375px;
+        gap: 180px;
+    }
+    
+    .social-media a {
+        font-weight: 600;
+        font-size: 25px;
+    }
+    
+    .btn-play {
+        font-size: 30px;
+    }
+    
+    .btn-play img {
+        width: 140px;
+    }
+    
+}

@@ -1,0 +1,127 @@
+.footer {
+    background-color: #26353B; 
+    padding: 40px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.footer-center {
+    flex: 1;
+    justify-content: center;
+}
+
+.footer-right {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.footer-left a {
+    color: #fff;
+    opacity: 0.6;
+    font-size: 12px;
+    font-family: Rubik, sans-serif;
+    transition: color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-center .footer-logo {
+    max-width: 150px;
+}
+
+.footer-right a {
+    color: #fff;
+    margin-left: 20px;
+    font-size: 14px;
+    opacity: 0.6;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #ffaaaa;
+}
+
+.footer-left a:hover{
+    color: #ffaaaa;
+}
+
+.footer-left a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffaaaa;
+    transition: width 0.3s ease;
+}
+
+.footer-left a:hover:after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-left a, .footer-right a {
+        font-size: 12px;
+    }
+
+    .footer-center .footer-logo {
+        max-width: 100px;
+    }
+ */
+    .footer-right {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-top: 20px;
+    }
+
+    .footer-right a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .footer .container {
+        max-width: 2000px; 
+        justify-content: center; 
+    }
+
+    .footer-left a, .footer-right a {
+        font-size: 30px; 
+    }
+
+    .footer-center .footer-logo {
+        max-width: 250px;
+    }
+
+    .footer-center img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .footer {
+        height: 60px;
+    }
+}

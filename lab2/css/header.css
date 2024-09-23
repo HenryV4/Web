@@ -1,0 +1,165 @@
+.background{
+    background-image: url('../images/Bitmap.png'); 
+    background-size: cover;
+}
+
+header {
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+header.active {
+    background-color: #606B74;
+}
+
+.header__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav .logo {
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.header_right {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.header_right ul {
+    display: flex;
+    gap: 40px;
+    color: white;
+}
+
+.header__nav-link {
+    list-style: none;
+}
+
+.btn {
+    background-color: #fff;
+    color: #606B74;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.btn:hover {
+    background-color: #a3a3a3;
+    color: #fff;
+}
+
+.header_right ul li a:not(.btn) {
+    position: relative; /* Needed for the hover effect */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.header_right ul li a:not(.btn):hover {
+    color: #ffaaaa; 
+}
+
+.header_right ul li a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffaaaa;
+    transition: width 0.3s ease;
+}
+
+.header_right ul li a:not(.btn):hover::after {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #ffaaaa;
+    color: #fff;
+}
+
+/* Burger Menu Icon */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.close-menu {
+    position: absolute;
+    top: 8px;
+    right: 35px;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header_right {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #606B74;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease;
+        z-index: 10;
+    }
+
+    .header_right.active {
+        max-height: 100vh;
+    }
+
+    .header_right ul {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        list-style: none;
+        text-align: center;
+    }
+
+    .close-menu {
+        display: block;
+    }
+
+    header {
+        z-index: 9;
+        position: relative;
+    }
+
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 2000px) {
+    .container {
+        max-width: 2000px; 
+    }
+
+    .header_right {
+        font-size: 30px;
+    }
+
+    .header__nav .logo img {
+        width: 250px;
+    }
+
+}
