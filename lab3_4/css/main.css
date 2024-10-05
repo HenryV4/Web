@@ -1,0 +1,115 @@
+/* General Layout and Header Styles */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    margin: 0;
+}
+
+/* Header Navigation Links */
+.header-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 14px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+}
+
+/* Create Button */
+.create-link {
+    background-color: #28a745;
+}
+
+.create-link:hover {
+    background-color: #218838;
+}
+
+/* Search Section */
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 250px; /* Make the search input wider */
+    padding: 8px; /* Add padding for better appearance */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-button,
+.cancel-search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover,
+.cancel-search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Content Layout */
+.content {
+    display: flex; /* Flex layout to align form and card list side by side */
+    justify-content: space-between;
+    gap: 20px; /* Space between form and card list */
+}
+
+/* Back Link Button */
+.back-link {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from back link */
+}
+
+.back-link:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for Total Loans */
+.total-loans {
+    font-size: 20px;  /* Match the font size of the sorting label */
+    font-weight: normal;  /* Keep the text weight consistent */
+    margin-top: 20px;  /* Add some spacing between the button and the text */
+}
+
+/* Styling for the loans count number */
+.total-loans strong {
+    font-weight: bold;  /* Make the loan count number bold */
+    color: #007bff;  /* Optionally, you can style the number with a specific color */
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Cards</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="css/imports.css">
+</head>
+<body class="page-background">
+  <div class="main-container">
+    <div class="header">
+      <h1 class="header-title">Bank Cards</h1>
+      <div class="header-navigation">
+        <a href="lab3.html" class="nav-link">My Banks</a>
+        <a href="create_bank.html" class="nav-link create-link">Create Bank</a>
+        <div class="header-search">
+          <input id="find_input" type="text" class="search-input" placeholder="Search for a bank...">
+          <button id="find_button" type="button" class="search-button">Search</button>
+          <button id="cancel_find_button" type="button" class="cancel-search-button">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="form-section">
+        <div class="sorting-section">
+          <label for="sorting_switch">Enable Sorting by Number of Loans</label>
+          <label class="switch">
+            <input type="checkbox" id="sorting_switch">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- Add the missing count loans button here -->
+        <button id="count_loans_button" type="button" class="count-button">Count Total Loans</button>
+        <p class="total-loans">Total Loans Issued: <strong id="total_loans">0</strong></p>
+      </div>
+      
+      <!-- Right side: Card list section -->
+      <ul id="items_container" class="cards-list"></ul>
+    </div>
+
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

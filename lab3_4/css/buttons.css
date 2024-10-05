@@ -1,0 +1,72 @@
+/* Button Container Styles */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between buttons */
+}
+
+/* General Button Styling Reset */
+.count-button {
+    background-color: #007bff;  /* Primary blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    font-size: 14px;
+    text-align: center;
+    margin-top: 18px;
+}
+
+/* Hover and Focus States */
+.count-button:hover {
+    background-color: #0056b3; /* Darker blue on hover/focus */
+    outline: none;  /* Remove default focus outline */
+}
+
+/* Edit Button */
+.edit-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #007bff; /* Primary blue */
+    color: white;
+}
+
+.edit-button:hover,
+.edit-button:focus {
+    background-color: #0056b3; /* Darker blue on hover/focus */
+    outline: none;             /* Remove focus outline */
+}
+
+/* Delete Button */
+.delete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: red; /* Red color for delete action */
+    color: white;
+}
+
+.delete-button:hover,
+.delete-button:focus {
+    background-color: rgb(201, 15, 15); /* Darker red on hover/focus */
+    outline: none;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    background-color: #0056b3; /* Darker blue on hover/focus */
+    outline: none;
+}

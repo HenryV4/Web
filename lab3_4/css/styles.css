@@ -1,0 +1,351 @@
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-title {
+    margin: 0;
+  }
+  
+  .header-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-input {
+    width: 200px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .header-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .nav-link {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 14px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: #0056b3;
+  }
+  
+  .create-link {
+    background-color: #28a745;
+  }
+  
+  .create-link:hover {
+    background-color: #218838;
+  }
+  
+  .header-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-input {
+    width: 200px;
+  }
+  
+  .search-button,
+  .cancel-search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover,
+  .cancel-search-button:hover {
+    background-color: #0056b3;
+  }
+
+.content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.form-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+.form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .form-input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cards-list {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item-card {
+    max-width: 420px;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .item-container__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .item-container__content p {
+    margin: 1;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    gap: 10px; /* Add space between the buttons */
+  }
+  
+  .edit-button, .delete-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .edit-button {
+    background-color: #007bff; /* Blue color for Edit button */
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .delete-button {
+    background-color: red; /* Red color for Delete button */
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: rgb(201, 15, 15); /* Darker red on hover */
+  }
+
+  .sorting-section {
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sorting-section label{
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .5s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(40px);
+  }
+
+  .slider:after {
+    content: 'OFF';
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 85%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  input:checked + .slider:after {
+    content: 'ON';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+  }
+
+.reviews-counter{
+    font-size: 18px;
+}
+
+.back-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #007bff;
+  }
+
+.back-link {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-link:hover {
+    background-color: #0056b3;
+  }
+  
+.form-section p{
+    font-size: 20px;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1000; /* Sit on top of everything */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px; /* Limit modal size */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Close Button */
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Transition Effect */
+  .modal-fade-in {
+    animation: fadeIn 0.3s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

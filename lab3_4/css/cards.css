@@ -1,0 +1,49 @@
+/* Card List Styling */
+.cards-list {
+    flex: 1; /* Allow card list to take up remaining space */
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margins for UL */
+    margin-left: 100px;
+}
+
+/* Individual Card Styling */
+.item-card {
+    max-width: 100%; /* Full width of container */
+    background-color: white;
+    padding: 30px; /* Increased padding for better spacing */
+    margin-bottom: 15px; /* Increase margin between cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.item-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly darker shadow on hover */
+}
+
+/* Card Content Layout */
+.item-container__content {
+    display: flex;
+    justify-content: space-between; /* Space between card content and buttons */
+    align-items: center; /* Align text and buttons vertically */
+    gap: 10px; /* Space between content sections */
+}
+
+/* Card Text Styling */
+.item-container__content p {
+    margin: 10px 0; /* Consistent spacing between paragraphs */
+    font-size: 17px; /* Slightly smaller font size for cleaner look */
+    color: #333; /* Darker text for better readability */
+}
+
+/* Ensure Bank Name is Bold */
+.item-container__content strong {
+    font-size: 16px; /* Larger font for bank name */
+    color: #000; /* Black for emphasis */
+}
+
+/* Add subtle transitions to elements */
+.item-container__content button {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect for buttons */
+}
