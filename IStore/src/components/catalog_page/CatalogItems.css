@@ -1,0 +1,21 @@
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters select,
+.filters button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.catalog-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
