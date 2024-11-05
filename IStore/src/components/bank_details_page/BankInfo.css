@@ -1,0 +1,32 @@
+/* BankInfo.css */
+
+.bank-info {
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.bank-info-cont{
+    display: flex;
+    align-items: center;
+}
+
+.bank-image {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 500px;
+    height: auto;
+    margin-right: 50px;
+    border-radius: 15%;
+}
+
+.bank-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.bank-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 5px;
+}

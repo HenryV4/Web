@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 import './header.css';
 import logo from '../../../images/logo.png';
 
-function Header({ showSearch }) {
+function Header({ showSearch, onSearch }) {
+    const handleSearchInputChange = (e) => {
+        if (onSearch) {
+            onSearch(e.target.value.trim(" ")); // Trim spaces before passing the search term
+        }
+    };
+
     return (
         <header className="header">
             <img className="logo" src={logo} alt="Logo" />
@@ -20,6 +26,7 @@ function Header({ showSearch }) {
                         type="text"
                         placeholder="Search..."
                         className="search-bar"
+                        onChange={handleSearchInputChange} // Handle search input changes
                     />
                 )}
             </nav>

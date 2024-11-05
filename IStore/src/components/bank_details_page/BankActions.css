@@ -1,0 +1,31 @@
+/* BankActions.css */
+
+.bank-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #f0f0f0;
+}
+
+.add-to-cart-button {
+    background-color: #333;
+    color: white;
+    border: none;
+}
+
+.add-to-cart-button:hover {
+    background-color: #555;
+}

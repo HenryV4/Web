@@ -1,7 +1,19 @@
 .preview-tiles {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 2rem 0;
+    overflow: hidden; /* Hide any overflow during transition */
+    transition: max-height 0.5s ease; /* Smooth transition */
+    max-height: 530px;
+}
+
+.preview-tiles.expanded {
+    max-height: 1100px; /* Expanded max-height to accommodate more items */
+}
+
+.preview-tiles.collapsed {
+    max-height: 600px; /* Set this to fit the height of 3 items */
 }
 
 .catalog-item {
@@ -44,10 +56,9 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
 }
 
-.view-all .view-all-link {
+.toggle-view-button {
     background-color: #333;
     color: white;
     padding: 0.8rem 2rem;
@@ -59,6 +70,6 @@ p {
     transition: ease 0.3s;
 }
 
-.view-all .view-all-link:hover {
+.toggle-view-button:hover {
     background-color: #555;
 }
