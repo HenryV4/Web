@@ -16,7 +16,12 @@ function BankInfo({
                 <p><strong>Type:</strong> {type}</p>
                 <p><strong>Interest Rate:</strong> {interestRate}</p>
                 <p><strong>Founded Year:</strong> {foundedYear}</p>
-                <BankFields />
+                
+                {/* Pass the props to BankFields */}
+                <BankFields 
+                    handleQuantityChange={handleQuantityChange} 
+                    handleVariationChange={handleVariationChange}  // Ensure handleVariationChange is passed here
+                />
             </div>
         </div>
     );
