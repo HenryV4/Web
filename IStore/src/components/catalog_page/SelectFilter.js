@@ -1,5 +1,3 @@
-// src/components/catalog_page/SelectFilter.js
-
 import React from 'react';
 import './SelectFilter.css';
 
@@ -10,7 +8,6 @@ function SelectFilter({ label, options, value, onChange }) {
             value={value} 
             onChange={(e) => onChange(e.target.value)}
         >
-            <option value="">{label}</option>
             {options.map((option, index) => (
                 <option key={index} value={option}>
                     {option}

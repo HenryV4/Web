@@ -19,7 +19,7 @@ function Header({ showSearch, onSearch }) {
                 <ul className="nav-links">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/catalog">Catalog</Link></li>
-                    <li><Link to="/cart">Cart</Link></li>
+                    <li><Link to="/cart" className="cart-icon">Cart</Link></li>
                 </ul>
                 {showSearch && (
                     <input

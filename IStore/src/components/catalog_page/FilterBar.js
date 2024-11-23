@@ -17,19 +17,19 @@ function FilterBar({ onApplyFilters }) {
         <div className="filter-bar">
             <SelectFilter 
                 label="Type" 
-                options={['', 'Retail', 'Commercial', 'Investment', 'Online']} 
+                options={['No type filter', 'Retail', 'Commercial', 'Investment', 'Online']} 
                 value={type}
                 onChange={setType}
             />
             <SelectFilter 
                 label="Interest Rates" 
-                options={['', 'Low (<1%)', 'Moderate (1-3%)', 'High (>3%)']} 
+                options={['No Interest Rate filter', 'Low (<1%)', 'Moderate (1-3%)', 'High (>3%)']} 
                 value={interestRate}
                 onChange={setInterestRate}
             />
             <SelectFilter 
                 label="Founded Year" 
-                options={['', 'Before 1950', '1950-2000', '2000+']} 
+                options={['No Founded Year filter', 'Before 1950', '1950-2000', '2000+']} 
                 value={foundedYear}
                 onChange={setFoundedYear}
             />

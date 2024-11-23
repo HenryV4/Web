@@ -32,7 +32,7 @@ function CatalogPage() {
                 setTimeout(() => {
                     setBanks(response.data);
                     setLoading(false);
-                }, 500); // 1-second delay
+                }); // 1-second delay
             } catch (error) {
                 console.error("Error fetching banks:", error);
                 setLoading(false);

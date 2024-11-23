@@ -17,7 +17,20 @@ db.serialize(() => {
         )
     `);
 
-    // Insert initial data if the table is empty
+    // Create the cart_items table if it doesn't exist
+    db.run(`
+        CREATE TABLE IF NOT EXISTS cart_items (
+            cart_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER NOT NULL,
+            name TEXT NOT NULL,
+            price TEXT NOT NULL,
+            imageSrc TEXT NOT NULL,
+            quantity INTEGER NOT NULL,
+            variant TEXT DEFAULT 'Standard'
+        )
+    `);
+
+    // Insert initial data if the banks table is empty
     db.all("SELECT COUNT(*) AS count FROM banks", (err, rows) => {
         if (err) throw err;
 

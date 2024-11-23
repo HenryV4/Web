@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home.js';
 import CatalogPage from './Pages/CatalogPage.js';
 import BankDetails from './Pages/BankDetails.js';
+import CartPage from './Pages/CartPage.js';
 import LoadingSpinner from '../src/components/common/Loading/LoadingSpinner.js';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -27,7 +28,7 @@ function App() {
   }, []);
 
   if (!backendReady && !backendError) {
-      return <LoadingSpinner />; // Show loading until backend is ready or fails
+      return <LoadingSpinner />;
   }
 
   if (backendError) {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/bank/:id" element={<BankDetails />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </div>
     </Router>

@@ -20,7 +20,7 @@ function CatalogPreview() {
                 setTimeout(() => {
                     setBanks(response.data.slice(0, 6)); // Fetch first 6 banks
                     setLoading(false);
-                }, 1000); // 1-second delay
+                }); // 1-second delay
             })
             .catch(error => {
                 console.error("Error fetching banks:", error);

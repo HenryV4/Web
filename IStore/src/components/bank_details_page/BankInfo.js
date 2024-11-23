@@ -1,14 +1,16 @@
 import React from 'react';
-import BankCharacteristics from './BankCharacteristics';
-import BankFields from './BankFields';
+import BankFields from './BankFields';  // Import BankFields component
 import './BankInfo.css';
 
-function BankInfo({ imageSrc, imageAlt, title, description, type, interestRate, foundedYear }) {
+function BankInfo({ 
+    imageSrc, imageAlt, title, description, 
+    type, interestRate, foundedYear, 
+    handleQuantityChange, handleVariationChange 
+}) {
     return (
         <div className="bank-info-cont">
             <img src={imageSrc} alt={imageAlt} className="bank-image" />
             <div className="bank-info">
-                <BankCharacteristics />
                 <h1 className="bank-title">{title}</h1>
                 <p className="bank-description">{description}</p>
                 <p><strong>Type:</strong> {type}</p>
