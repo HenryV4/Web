@@ -1,14 +1,15 @@
 .catalog-item {
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 16px;
-    margin: 16px;
     width: 330px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 

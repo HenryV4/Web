@@ -1,55 +1,9 @@
+/* Default styles */
 .preview-tiles {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2rem 0;
-    overflow: hidden; /* Hide any overflow during transition */
-    transition: max-height 0.5s ease; /* Smooth transition */
-    max-height: 530px;
-}
-
-.preview-tiles.expanded {
-    max-height: 1100px; /* Expanded max-height to accommodate more items */
-}
-
-.preview-tiles.collapsed {
-    max-height: 600px; /* Set this to fit the height of 3 items */
-}
-
-.catalog-item {
-    width: 30%;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 1rem;
-    text-align: center;
-}
-
-.item-image {
-    max-width: 400px;
-    height: 250px;
-    margin-bottom: 1rem;
-}
-
-.item-image img {
-    max-width: 350px;
-    height: 250px;
-}
-
-h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-p {
-    color: #666;
-}
-
-.price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 1rem 0;
+    overflow: hidden;
 }
 
 .view-all {
@@ -67,9 +21,13 @@ p {
     font-size: 1.1rem;
     cursor: pointer;
     text-decoration: none;
-    transition: ease 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .toggle-view-button:hover {
     background-color: #555;
 }
+
+.catalog-preview {
+    position: relative;
+  }

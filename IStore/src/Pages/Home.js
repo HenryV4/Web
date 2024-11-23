@@ -5,7 +5,7 @@ import CatalogPreview from '../components/home_page/CatalogPreview/CatalogPrevie
 import Footer from '../components/common/footer/footer';
 import '../App.css';
 
-function App() {
+function Home() {
   return (
     <>
     <Header />
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

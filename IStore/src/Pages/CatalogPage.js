@@ -1,56 +1,53 @@
 // src/pages/CatalogPage.js
-
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/common/header/header';
 import Footer from '../components/common/footer/footer';
 import CatalogItems from '../components/catalog_page/CatalogItems';
 import FilterBar from '../components/catalog_page/FilterBar';
-import { BanksContext } from '../data/BanksContext'; 
-import '../App.css';
+import { fetchBanks } from '../api/api';
+import LoadingSpinner from '../components/common/Loading/LoadingSpinner';
+import useDebounce from '../hooks/useDebounce';
 
 function CatalogPage() {
-    const banks = useContext(BanksContext);
-    const [filters, setFilters] = useState({
-        type: '',
-        interestRate: '',
-        foundedYear: ''
-    });
-    const [searchTerm, setSearchTerm] = useState('');
+    const [banks, setBanks] = useState([]);
+    const [filters, setFilters] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    const debouncedFilters = useDebounce(filters, 300);
 
     const handleApplyFilters = (appliedFilters) => {
-        console.log('Applying filters:', appliedFilters);
-        setFilters({ ...appliedFilters });
+        setFilters(prevFilters => ({ ...prevFilters, ...appliedFilters }));
     };
 
-    const handleSearch = (term) => {
-        setSearchTerm(term);
+    const handleSearch = (searchTerm) => {
+        setFilters(prevFilters => ({ ...prevFilters, searchTerm }));
     };
 
-    const filteredBanks = banks.filter((bank) => {
-        const typeMatches = filters.type === '' || bank.type === filters.type;
-        const interestRateValue = parseFloat(bank.interestRate.replace(/[^\d.-]/g, ''));
-        const interestRateMatches = filters.interestRate === '' || 
-            (filters.interestRate === 'Low (<1%)' && interestRateValue < 1) ||
-            (filters.interestRate === 'Moderate (1-3%)' && interestRateValue >= 1 && interestRateValue <= 3) ||
-            (filters.interestRate === 'High (>3%)' && interestRateValue > 3);
-        const foundedYearMatches = filters.foundedYear === '' || 
-            (filters.foundedYear === 'Before 1950' && bank.foundedYear < 1950) ||
-            (filters.foundedYear === '1950-2000' && bank.foundedYear >= 1950 && bank.foundedYear <= 2000) ||
-            (filters.foundedYear === '2000+' && bank.foundedYear > 2000);
+    useEffect(() => {
+        setLoading(true);
+        // Adding a 1-second delay to simulate loading time for the spinner to appear
+        const fetchWithDelay = async () => {
+            try {
+                const response = await fetchBanks(debouncedFilters);
+                setTimeout(() => {
+                    setBanks(response.data);
+                    setLoading(false);
+                }, 500); // 1-second delay
+            } catch (error) {
+                console.error("Error fetching banks:", error);
+                setLoading(false);
+            }
+        };
 
-        const searchMatches = searchTerm === '' || 
-            bank.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            bank.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-        return typeMatches && interestRateMatches && foundedYearMatches && searchMatches;
-    });
+        fetchWithDelay();
+    }, [debouncedFilters]);
 
     return (
         <>
             <Header showSearch onSearch={handleSearch} />
             <FilterBar onApplyFilters={handleApplyFilters} />
             <div className="AppContainer">
-                <CatalogItems banks={filteredBanks} />
+                {loading ? <LoadingSpinner /> : <CatalogItems banks={banks} />}
             </div>
             <Footer />
         </>
