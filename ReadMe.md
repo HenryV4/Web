@@ -1,21 +1,22 @@
 ## Лабораторні роботи з дисципліни "Вебтехнології та вебидизайн"
 
 ## Виконав: Заплатинський Ігор Тарасович(ІР-23)
-## Лабораторна робота №10
+## Лабораторна робота №11
 
-Description: You are on your way to finishing this insane project… Create the first of three cart pages - Shopping cart page.
-Also, here you meet one of the most popular React library - Redux.
+Description: Finish your project by creating the last of three cart pages - Checkout & Success pages.
+As a bonus, you will learn a very handy and powerful form validation library - Formik.
 
 Variants -  (products that you are ‘selling’) the same as for previous works. (see the description to 3rd work)
 
 Requirements: 
 ⦁	All of the requirements for previous React.js works should be kept.
-⦁	Functionality:
-⦁	Item page: “Add to cart” action should be implemented using Redux flow: when you add an item to cart, it should be added to your redux store. On Cart page you take all of the items from the store
-⦁	Cart page: “add/remove” actions should be implemented through redux actions & reducers as well.
-⦁	 Code style: 
-⦁	Redux: All Redux parts (actions / reducers / store) should be kept in separate and specific files (actions.js / reducers.js / store.js etc.)
-⦁	Use useSelector hook for getting the data from redux store (instead of connect() function)
-https://react-redux.js.org/api/hooks#⦁	useselector-examples
-⦁	Use useDispatch hook for dispatching your actions (instead of connect() function)
-https://react-redux.js.org/api/hooks#⦁	usedispatch
+⦁	Functionality: 
+⦁	Form: Your form should have at least 5 fields
+⦁	Form: Every field should have a validation rule (i.e max length / no special characters / only numbers), just required option - is not enough 
+⦁	Form: You should have at least one field that uses RegEx and at least one field that doesn’t required string value(i.e Phone number)
+⦁	Form: In the error message you should describe all errors in all fields with clear reason (i.e Email is incorrect, First name is a required field...)
+⦁	Form: Error message should be a separate React Component
+⦁	After successful form submit - the user is redirected to final page (Success page)
+⦁	 Code style:
+⦁	Use Formik & Yup libraries or any functionality related to form validation (fields validating, error messages, form submit)
+https://youtu.be/3sXYK60T6Us?t=390
