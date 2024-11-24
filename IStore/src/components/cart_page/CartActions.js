@@ -11,7 +11,7 @@ function CartActions() {
       <button onClick={() => navigate('/catalog')} className="back-button">
         Back to Catalog
       </button>
-      <button className="continue-button">
+      <button onClick={() => navigate('/checkout')} className="continue-button">
         Continue
       </button>
     </div>

@@ -1,0 +1,10 @@
+
+.filter-option {
+    padding: 10px 50px;
+    font-size: 1rem;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}

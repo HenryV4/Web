@@ -6,6 +6,8 @@ import CatalogPage from './Pages/CatalogPage.js';
 import BankDetails from './Pages/BankDetails.js';
 import CartPage from './Pages/CartPage.js';
 import LoadingSpinner from '../src/components/common/Loading/LoadingSpinner.js';
+import CheckoutPage from './Pages/CheckoutPage.js';
+import SuccessPage from './Pages/SuccessPage.js'
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -43,6 +45,8 @@ function App() {
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/bank/:id" element={<BankDetails />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/success" element={<SuccessPage />} />
         </Routes>
       </div>
     </Router>

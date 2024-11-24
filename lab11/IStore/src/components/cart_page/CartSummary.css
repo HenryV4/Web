@@ -1,0 +1,13 @@
+/* src/components/cart/CartSummary.css */
+.cart-summary {
+    margin-top: 30px;
+    text-align: right;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .total-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
