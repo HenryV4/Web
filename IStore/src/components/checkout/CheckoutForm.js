@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios'; // Import axios for API calls
 import './CheckoutForm.css';
 
 const CheckoutForm = () => {
@@ -33,14 +34,35 @@ const CheckoutForm = () => {
         .min(5, 'Address must be at least 5 characters')
         .required('Address is required'),
     }),
-    onSubmit: (values) => {
-      console.log('Form values:', values);
-      window.location.href = '/success'; // Navigate to Success page
+    onSubmit: async (values) => {
+      try {
+        console.log('Form values:', values);
+        // Simulate order processing
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Mock API call delay
+
+        // Clear the cart
+        const token = localStorage.getItem('token');
+        if (!token) {
+          throw new Error('User is not authenticated');
+        }
+
+        await axios.delete('http://localhost:5000/api/cart', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        // Redirect to success page
+        window.location.href = '/success';
+      } catch (error) {
+        console.error('Error during checkout:', error.response?.data || error.message);
+      }
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit} className="checkout-form">
+    <div className="form-row">
       <div className="form-group">
         <label htmlFor="firstName">First Name</label>
         <input
@@ -55,7 +77,6 @@ const CheckoutForm = () => {
           <div className="error">{formik.errors.firstName}</div>
         ) : null}
       </div>
-
       <div className="form-group">
         <label htmlFor="lastName">Last Name</label>
         <input
@@ -70,7 +91,9 @@ const CheckoutForm = () => {
           <div className="error">{formik.errors.lastName}</div>
         ) : null}
       </div>
+    </div>
 
+    <div className="form-row">
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input
@@ -85,7 +108,6 @@ const CheckoutForm = () => {
           <div className="error">{formik.errors.email}</div>
         ) : null}
       </div>
-
       <div className="form-group">
         <label htmlFor="phone">Phone</label>
         <input
@@ -100,41 +122,44 @@ const CheckoutForm = () => {
           <div className="error">{formik.errors.phone}</div>
         ) : null}
       </div>
+    </div>
 
-      <div className="form-group">
-        <label htmlFor="address">Address</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.address}
-        />
-        {formik.touched.address && formik.errors.address ? (
-          <div className="error">{formik.errors.address}</div>
-        ) : null}
+    <div className="form-group full-width">
+      <label htmlFor="address">Address</label>
+      <input
+        type="text"
+        id="address"
+        name="address"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.address}
+      />
+      {formik.touched.address && formik.errors.address ? (
+        <div className="error">{formik.errors.address}</div>
+      ) : null}
+    </div>
+
+    {Object.keys(formik.errors).length > 0 && formik.touched && (
+      <div className="error-box">
+        Oh snap! Change a few things and try submitting again.
+        <button type="button" className="dismiss-error">✖</button>
       </div>
+    )}
 
-      {Object.keys(formik.errors).length > 0 && formik.touched && (
-        <div className="error-box">
-          Oh snap! Change a few things and try submitting again.
-        </div>
-      )}
+    <div className="form-actions">
+      <button
+        type="button"
+        className="btn-secondary"
+        onClick={() => (window.location.href = '/cart')}
+      >
+        Go Back
+      </button>
+      <button type="submit" className="btn-primary">
+        Continue
+      </button>
+    </div>
+  </form>
 
-      <div className="form-actions">
-        <button
-          type="button"
-          className="btn-secondary"
-          onClick={() => (window.location.href = '/cart')}
-        >
-          Go Back
-        </button>
-        <button type="submit" className="btn-primary">
-          Continue
-        </button>
-      </div>
-    </form>
   );
 };
 

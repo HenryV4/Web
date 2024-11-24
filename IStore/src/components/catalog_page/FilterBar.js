@@ -4,10 +4,17 @@ import React, { useState } from 'react';
 import './FilterBar.css';
 import SelectFilter from './SelectFilter';
 
-function FilterBar({ onApplyFilters }) {
+function FilterBar({ onApplyFilters, onSearch }) {
     const [type, setType] = useState('');
     const [interestRate, setInterestRate] = useState('');
     const [foundedYear, setFoundedYear] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchChange = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        onSearch(value);
+    };
 
     const handleApplyFilters = () => {
         onApplyFilters({ type, interestRate, foundedYear });
@@ -34,6 +41,13 @@ function FilterBar({ onApplyFilters }) {
                 onChange={setFoundedYear}
             />
             <button className="apply-button" onClick={handleApplyFilters}>Apply</button>
+            <input
+                type="text"
+                placeholder="Search..."
+                className="search-input"
+                value={searchTerm}
+                onChange={handleSearchChange}
+            />
         </div>
     );
 }

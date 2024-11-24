@@ -5,8 +5,9 @@
   padding: 2rem 1rem;
   border-bottom: 1px solid #ddd;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   position: relative;
+  height: 60px;
 }
 
 .logo {
@@ -17,6 +18,7 @@
 }
 
 .nav-container {
+  margin-top: 15px;
   width: 100%;
   text-align: center;
 }
@@ -48,16 +50,32 @@
 
 .search-bar {
   position: absolute;
-  right: 50px; /* Position search bar on the right */
+  right: 50px;
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  width: 200px; /* Set width of the search bar */
+  width: 200px;
   transition: border-color 0.2s;
 }
 
 .search-bar:focus {
   border-color: #aaa;
   outline: none;
+}
+
+.logout-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 20px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c4282b;
 }

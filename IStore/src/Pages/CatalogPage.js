@@ -1,6 +1,6 @@
 // src/pages/CatalogPage.js
 import React, { useState, useEffect } from 'react';
-import Header from '../components/common/header/header';
+// import Header from '../components/common/header/header';
 import Footer from '../components/common/footer/footer';
 import CatalogItems from '../components/catalog_page/CatalogItems';
 import FilterBar from '../components/catalog_page/FilterBar';
@@ -16,25 +16,22 @@ function CatalogPage() {
     const debouncedFilters = useDebounce(filters, 300);
 
     const handleApplyFilters = (appliedFilters) => {
-        setFilters(prevFilters => ({ ...prevFilters, ...appliedFilters }));
+        setFilters((prevFilters) => ({ ...prevFilters, ...appliedFilters }));
     };
 
     const handleSearch = (searchTerm) => {
-        setFilters(prevFilters => ({ ...prevFilters, searchTerm }));
+        setFilters((prevFilters) => ({ ...prevFilters, searchTerm }));
     };
 
     useEffect(() => {
         setLoading(true);
-        // Adding a 1-second delay to simulate loading time for the spinner to appear
         const fetchWithDelay = async () => {
             try {
                 const response = await fetchBanks(debouncedFilters);
-                setTimeout(() => {
-                    setBanks(response.data);
-                    setLoading(false);
-                }); // 1-second delay
+                setBanks(response.data);
             } catch (error) {
-                console.error("Error fetching banks:", error);
+                console.error('Error fetching banks:', error);
+            } finally {
                 setLoading(false);
             }
         };
@@ -44,8 +41,8 @@ function CatalogPage() {
 
     return (
         <>
-            <Header showSearch onSearch={handleSearch} />
-            <FilterBar onApplyFilters={handleApplyFilters} />
+            {/* <Header /> */}
+            <FilterBar onApplyFilters={handleApplyFilters} onSearch={handleSearch} />
             <div className="AppContainer">
                 {loading ? <LoadingSpinner /> : <CatalogItems banks={banks} />}
             </div>

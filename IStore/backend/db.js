@@ -3,6 +3,16 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./database.sqlite');
 
 db.serialize(() => {
+    // Create users table
+    db.run(`
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        );
+    `);
+    
     // Create the banks table if it doesn't exist
     db.run(`
         CREATE TABLE IF NOT EXISTS banks (
@@ -21,13 +31,15 @@ db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS cart_items (
             cart_id INTEGER PRIMARY KEY AUTOINCREMENT,
-            id INTEGER NOT NULL,
-            name TEXT NOT NULL,
-            price TEXT NOT NULL,
-            imageSrc TEXT NOT NULL,
-            quantity INTEGER NOT NULL,
-            variant TEXT DEFAULT 'Standard'
-        )
+            user_id INTEGER NOT NULL,      -- Links cart to a user
+            product_id INTEGER NOT NULL,   -- Product ID
+            name TEXT NOT NULL,            -- Product name
+            price REAL NOT NULL,           -- Product price
+            quantity INTEGER NOT NULL,     -- Quantity of the product
+            imageSrc TEXT NOT NULL,        -- Product image source
+            variant TEXT DEFAULT 'Standard', -- Product variant (e.g., size/color)
+            FOREIGN KEY (user_id) REFERENCES users (id)
+        );
     `);
 
     // Insert initial data if the banks table is empty

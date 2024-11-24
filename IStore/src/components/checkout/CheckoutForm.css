@@ -2,28 +2,30 @@
   width: 50%;
   margin: 2rem auto;
   text-align: left;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #f9f9f9;
 }
 
-.CheckoutLable{
-  text-align: center;
-}
-
-.form-group {
+.form-row {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1.5rem;
 }
 
-label {
+.form-group {
+  flex: 0.48; /* Take half the available space with a small gap */
+}
+
+.form-group.full-width {
+  flex: 1; /* Full width for address field */
+}
+
+.form-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-input {
-  width: 97%;
+.form-group input {
+  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -33,7 +35,7 @@ input {
 .error {
   color: red;
   font-size: 0.9rem;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
 }
 
 .error-box {
@@ -42,8 +44,18 @@ input {
   padding: 1rem;
   border: 1px solid red;
   border-radius: 5px;
-  margin-bottom: 1rem;
-  text-align: center;
+  margin: 1rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dismiss-error {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .form-actions {
@@ -53,29 +65,32 @@ input {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #49a4f3;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
   transition: background-color 0.3s;
 }
 
 .btn-secondary {
-  background-color: #6c757d;
-  color: white;
+  margin-top: 10px;
+  background-color: #f8f9fa;
+  color: black;
   padding: 0.5rem 1rem;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+
 }
 
-.btn-primary:hover {
-  background-color: #000bff;
+.btn-primary:hover{
+  background-color: #206caebe;
 }
 
-.btn-secondary:hover {
-  background-color: #4f5356;
+.btn-secondary:hover{
+  background-color: #d2d2d4;
 }

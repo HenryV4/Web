@@ -10,15 +10,19 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const UPDATE_CART_QUANTITY = 'UPDATE_CART_QUANTITY';
 
 // Action Creators
-export const fetchCartItems = () => async (dispatch) => {
+export const fetchCartItems = (token) => async (dispatch) => {
     try {
-        const response = await axios.get(`${BASE_URL}/cart`);
+        const response = await axios.get('http://localhost:5000/api/cart', {
+            headers: { Authorization: token }, // Pass the token
+        });
+
         dispatch({
             type: FETCH_CART_ITEMS,
             payload: response.data,
         });
     } catch (error) {
         console.error('Error fetching cart items:', error);
+        throw error;
     }
 };
 
@@ -59,24 +63,30 @@ export const addToCart = (item) => async (dispatch, getState) => {
     }
 };
 
-export const removeFromCart = (itemId) => async (dispatch) => {
+export const removeFromCart = (cartId, token) => async (dispatch) => {
     try {
-        // Send DELETE request to backend with correct cart_id
-        await axios.delete(`${BASE_URL}/cart/${itemId}`);
-        dispatch(fetchCartItems()); // Refresh the cart items after removal
+        await axios.delete(`http://localhost:5000/api/cart/${cartId}`, {
+            headers: { Authorization: token }, // Pass the token
+        });
+
+        // Dispatch an action to update state if needed
     } catch (error) {
         console.error('Error removing item from cart:', error);
+        throw error;
     }
 };
 
-export const updateCartQuantity = (itemId, quantity) => async (dispatch) => {
+export const updateCartQuantity = (cartId, newQuantity, token) => async (dispatch) => {
     try {
-        // Send update request to backend to change the quantity
-        await axios.put(`${BASE_URL}/cart/${itemId}`, { quantity });
+        await axios.put(
+            `http://localhost:5000/api/cart/${cartId}`,
+            { quantity: newQuantity },
+            { headers: { Authorization: token } } // Pass the token
+        );
 
-        // Dispatch the action to update Redux store
-        dispatch(fetchCartItems()); // Refresh the cart items after updating quantity
+        // Dispatch an action to update state if needed
     } catch (error) {
         console.error('Error updating cart quantity:', error);
+        throw error;
     }
 };
